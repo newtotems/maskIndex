@@ -2,7 +2,7 @@ const faunadb = require('faunadb'),
   q = faunadb.query;
 
 module.exports = async function() {
-	const client = new faunadb.Client({ secret: process.env.FAUNADB })
+	const client = new faunadb.Client({ secret: FAUNADB_SERVER_SECRET })
 
 	let productObs = await client.query(
 		q.Map(
