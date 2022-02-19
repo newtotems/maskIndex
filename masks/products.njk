@@ -1,0 +1,10 @@
+---
+layout: layouts/home.njk
+pagination: 
+   data: products
+   alias: product
+   size: 1
+permalink: /masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}/index.html
+---
+
+{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}} 

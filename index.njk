@@ -5,7 +5,22 @@ eleventyNavigation:
   order: 1
 ---
 
-{% for brand in brands %}
-{{brand.name}}
+{% set brandslist = [] %}
+
+{% for post in products %}
+   {% if post.brand not in brandslist %}
+    {% set brandslist = (brandslist.push(post.brand), brandslist) %}
+   {% endif %}
 {% endfor %}
 
+{% for brand in brandslist %}
+<div>
+<a href="/masks/{{brand|slug}}/">{{brand}}</a>
+</div>
+{% endfor %}
+
+{% for item in products %}
+<div>
+<a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">{{item.brand}} - {{item.set}} - {{item.name}}</a>
+  </div>
+{% endfor %}
