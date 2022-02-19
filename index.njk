@@ -5,6 +5,7 @@ eleventyNavigation:
   order: 1
 ---
 
-{% for product in products %}
-{{product.brand}} - {{product.set}} - {{product.name}}
+{% for brand in brands %}
+{{brand.name}}
 {% endfor %}
+

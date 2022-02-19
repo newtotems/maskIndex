@@ -1,0 +1,9 @@
+---
+data: products
+layout: layouts/home.njk
+---
+{% for product in products %}
+{% if product.brand === "Tony Moly" %}
+{{product.set}}
+{% endif %}
+{% endfor %}

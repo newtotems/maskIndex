@@ -7,7 +7,8 @@
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "debug": "DEBUG=* eleventy",
+    "functions:dev": "netlify-lambda serve functions/api"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,8 @@
     "markdown-it-anchor": "^8.4.1"
   },
   "dependencies": {
-    "faunadb": "^4.5.2"
+    "dotenv": "^16.0.0",
+    "faunadb": "^4.5.2",
+    "netlify-lambda": "^2.0.15"
   }
 }
