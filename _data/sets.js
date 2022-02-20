@@ -7,7 +7,7 @@ module.exports = async function() {
 
 	let productObs = await client.query(
 		q.Map(
-			q.Paginate(q.Documents(q.Collection('masks'))),
+			q.Paginate(q.Documents(q.Collection('brand_sets'))),
             //q.Paginate(q.Match(q.Index('brands_sets'), 'Tony Moly')),
 			q.Lambda(x => q.Get(x))
 		)
@@ -19,4 +19,4 @@ module.exports = async function() {
 	return data;
 
 }
- 
+

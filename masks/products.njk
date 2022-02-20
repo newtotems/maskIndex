@@ -4,7 +4,13 @@ pagination:
    data: products
    alias: product
    size: 1
-permalink: /masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}/index.html
+permalink: /masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}/
 ---
 
-{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}} 
+products
+
+<img src="/img/masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}.jpg">
+<div>
+{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}
+</div>
+

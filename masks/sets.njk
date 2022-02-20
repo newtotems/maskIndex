@@ -1,42 +1,34 @@
 ---
 layout: layouts/home.njk
 pagination: 
-   data: brands
-   alias: brand
+   data: sets
+   alias: set
    size: 1
-permalink: /masks/{{brand.name|slug}}/
+permalink: /masks/{{set.brand|slug}}/{{set.set|slug}}/
 ---
 
-{% set setlist = [] %}
+sets
+
+<div>
+{{set.brand|slug}}/{{set.set|slug}}
+</div>
+
+{% set productlist = [] %}
 
 {% for item in products %}
 
-      {% if brand.name === item.brand %} 
+      {% if set.set === item.set %} 
 
-         {% if item.set not in setlist %}
-         {% set setlist = (setlist.push(item.set), setlist) %}
+         {% if item.name not in productlist %}
+         {% set productlist = (productlist.push(item.name), productlist) %}
          {% endif %}
 
       {% endif %} 
 
 {% endfor %}
 
-{% for item in setlist %}
-
+{% for product in productlist %}
 <div>
-<a href="/masks/{{brand.name|slug}}/{{item|slug}}">{{item}}</a>
+<a href="/masks/{{set.brand|slug}}/{{set.set|slug}}/{{product|slug}}">{{set.brand}} - {{set.set}} - {{product}}</a>
 </div>
-
-{% endfor %}
-
-{% for item in products %}
-
- {% if brand.name === item.brand %} 
-
- <div>
- {{item.brand}} - {{item.set}} - {{item.name}}
- </div>
-
-{% endif %} 
-
-{% endfor %}
+{%endfor%}

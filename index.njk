@@ -21,6 +21,7 @@ eleventyNavigation:
 
 {% for item in products %}
 <div>
+<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" width="150">
 <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">{{item.brand}} - {{item.set}} - {{item.name}}</a>
   </div>
 {% endfor %}
