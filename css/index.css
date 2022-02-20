@@ -247,3 +247,12 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link:visited {
   color: #aaa;
 }
+
+.product {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+body {
+  padding: 2rem;
+}

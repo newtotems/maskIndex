@@ -8,3 +8,4 @@ layout: layouts/home.njk
 
 {% set masks = products %}
 {% include "listmasks.njk" %}
+

@@ -2,9 +2,9 @@
 <div class="row">
 {% for item in row %}
 {% if item %}
-<div class="col-sm-2 col-xs-6">
+<div class="product col-sm-2 col-xs-6">
 <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
-<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" style="display:block;margin: 0 auto;width:auto;max-height:235px;max-width:100%">
+<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" class="img-fluid" style="max-height:225px;display:block;margin:0 auto">
 </a>
 <div>
   <small>
@@ -13,7 +13,7 @@
     </a>
   </small>
 </div>
-<div>  
+<div style="height:50px">  
   <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
     {{item.set}} - {{item.name}}
   </a>
@@ -22,13 +22,13 @@
 
 <div class="col-xs-6">
  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
-<button>Info</button>
+<button class="btn btn-outline-primary" style="display:block;width:100%">Info</button>
 </a>
 </div>
 
 <div class="col-xs-6">
 {% if item.link %}<a href="{{item.link}}" target="_blank">{% endif %}
-<button>Get</button>
+<button class="btn btn-primary" style="display:block;width:100%">Get</button>
 </a>
 </div>
 
