@@ -34,7 +34,7 @@ brands
 {% for item in products %}
 
  {% if brand.name === item.brand %} 
-{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}
+
  <div>
 <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">{{item.brand}} - {{item.set}} - {{item.name}}</a>
  </div>
