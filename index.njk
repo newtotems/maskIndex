@@ -5,6 +5,8 @@ eleventyNavigation:
   order: 1
 ---
 
+{# -------------------------------------- organise data #}
+
 {% set brandslist = [] %}
 
 {% for post in products %}
@@ -13,15 +15,17 @@ eleventyNavigation:
    {% endif %}
 {% endfor %}
 
+{# -------------------------------------- brands list #}
+<h2>Brands</h2>
+<div class="row">
 {% for brand in brandslist %}
-<div>
+<div class="col-sm-2">
 <a href="/masks/{{brand|slug}}/">{{brand}}</a>
 </div>
 {% endfor %}
+</div>
 
-{% for item in products %}
-<div>
-<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" width="150">
-<a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">{{item.brand}} - {{item.set}} - {{item.name}}</a>
-  </div>
-{% endfor %}
+{# -------------------------------------- latest products #}
+<h2>Latest Additions..</h2>
+{% set masks = products %}
+{% include "listmasks.njk" %}

@@ -1,0 +1,40 @@
+{% for row in masks | batch(6, '') %}
+<div class="row">
+{% for item in row %}
+{% if item %}
+<div class="col-sm-2">
+<a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" style="display:block;margin: 0 auto;width:100%">
+</a>
+<div>
+  <small>
+    <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+      {{item.brand}}
+    </a>
+  </small>
+</div>
+<div>  
+  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+    {{item.set}} - {{item.name}}
+  </a>
+</div>
+<div class="row">
+
+<div class="col-xs-6">
+ <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+<button>Info</button>
+</a>
+</div>
+
+<div class="col-xs-6">
+<a href="{{item.link}}" target="_blank">
+<button>Get</button>
+</a>
+</div>
+
+</div>
+  </div>
+  {% endif %}
+{% endfor %}
+</div>
+{% endfor %}
