@@ -5,24 +5,31 @@ eleventyNavigation:
   order: 1
 ---
 
-{# -------------------------------------- brands list #}
 
 <div class="row">
-{% for brand in brands %}
-<div class="col">
-<a href="/masks/{{brand.name|slug|replace("'","%27")}}/" class="btn btn btn-outline-secondary">{{brand.name}}</a>
-</div>
-{% endfor %}
+
+<div class="col-sm-4">
+
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}
+
 </div>
 
+<div class="col-sm-8">
+
 {# -------------------------------------- latest products #}
-<h2>Latest Additions..</h2>
+<h2 class="text-center">Latest Additions</h2>
 {% set masks = products | head(-12) %}
 
 {% include "listmasks.njk" %}
 
 <div class="row d-flex justify-content-center">
   <div class="col d-flex justify-content-center">
-    <a href="/masks/" class="btn btn-outline-secondary">See all masks</a>
+    <a href="/masks/" class="btn btn-outline-secondary">See all masks..</a>
   </div>
+</div>
+
+
+</div>
+
 </div>

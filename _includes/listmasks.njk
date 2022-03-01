@@ -20,16 +20,15 @@
 </div>
 <div class="row">
 
-<div class="col-xs-6">
- <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
-<button class="btn btn-outline-primary" style="display:block;width:100%">Info</button>
-</a>
-</div>
-
-<div class="col-xs-6">
-{% if item.link %}<a href="{{item.link}}" target="_blank">{% endif %}
-<button class="btn btn-primary" style="display:block;width:100%">Get</button>
-</a>
+<div class="col-xs-12 text-center">
+ {% if item.link %}
+ <a href="{{item.link}}" class="btn btn-primary" target="_blank">
+ Buy on</a>
+ {% else %}
+ <a href="{{item.link}}" class="btn btn-disabled" target="_blank">
+ No link
+ </a>
+ {% endif %}
 </div>
 
 </div>
