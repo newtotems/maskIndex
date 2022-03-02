@@ -175,14 +175,14 @@ code {
   align-items: baseline;
   counter-increment: start-from -1;
   line-height: 1.8;
+  outline: 1px solid var(--brand);
+  padding: 10px;
+  margin-bottom: 10px;
 }
-.postlist-item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
-  line-height: 100%;
-  text-align: right;
+a[href].postlist-link {
+  color: var(--brand);
 }
+
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
@@ -300,5 +300,13 @@ a[href].direct-link:focus:visited,
 
 .slug {
   font-weight: 800;
+  color: var(--brand);
+}
+
+.index-header {
+  margin: 20px 0;
+}
+
+h4 span {
   color: var(--brand);
 }
