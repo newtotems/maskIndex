@@ -7,16 +7,15 @@ layout: layouts/home.njk
 ---
 
 <div class="row">
-   <div class="col-sm-2">
+   <div class="col-sm-3">
 
    <h3 class="text-center">Filter By Brand</h3>
 <div class="row">
 {% for brand in brands %}
 {% if brand.featured === "yes" %}
-<div class="col">
-<a href="/masks/{{brand.name|slug|replace("'","%27")}}/" class="btn btn btn-outline-secondary">
-<img src="/img/logos/{{brand.name|slug}}.png">
-<!-- {{brand.name}} -->
+<div class="col-sm-6">
+<a href="/masks/{{brand.name|slug|replace("'","%27")}}/" class="btn btn">
+<img src="/img/logos/{{brand.name|slug}}.png" class="img-fluid" alt="{{brand.name}}" title="{{brand.name}}">
 </a>
 </div>
 {% endif   %}
@@ -25,7 +24,7 @@ layout: layouts/home.njk
 
    </div>
 
-   <div class="col-sm-10">
+   <div class="col-sm-9">
    {% set masks = products %}
 {% include "listmasks.njk" %}
    </div>

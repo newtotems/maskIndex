@@ -10,16 +10,23 @@
 </a>
 </div>
 
-<div class="product_desc">
+<div class="product__desc">
+<div>
   <small>
-    <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
-      {{item.brand}}
+    <a href="/masks/{{item.brand|slug}}/">
+    <img src="/img/logos/{{item.brand|slug}}.png" class="img-fluid" alt="{{item.brand}}" title="{{item.brand}}">
     </a>
   </small>
+  </div>
 
 <div>  
+  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}">
+    {{item.set}}
+  </a>
+</div>
+<div>  
   <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
-    {{item.set}} - {{item.name}}
+    {{item.name}}
   </a>
 </div>
 </div>

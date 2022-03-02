@@ -8,17 +8,17 @@ eleventyNavigation:
 
 <div class="row">
 
-<div class="col-sm-4">
+<div class="col-sm-3">
 
 {% set postslist = collections.posts %}
 {% include "postslist.njk" %}
 
 </div>
 
-<div class="col-sm-8">
+<div class="col-sm-9">
 
 {# -------------------------------------- latest products #}
-<h2 class="text-center">Latest Additions</h2>
+<h2 class="text-center">Latest Additions to the Sheet Mask Index</h2>
 {% set masks = products | head(-12) %}
 
 {% include "listmasks.njk" %}
