@@ -6,6 +6,7 @@
   --navy: #17050F;
   --blue: #082840;
   --white: #fff;
+  --brand: #3c78f0;
 }
 
 /* Global stylesheet */
@@ -38,6 +39,16 @@ a[href] {
 a[href]:visited {
   color: var(--navy);
 }
+.nav-item a[href]:after
+{
+  content: "";
+    background:var(--brand);
+    display: block;
+    height: 3px;
+    width: 100%;
+    position: static;
+}
+
 main {
   padding: 3rem;
 }
@@ -148,6 +159,11 @@ code {
   text-decoration: underline;
 }
 
+.navbar-brand {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
 /* Posts list */
 .postlist {
   list-style: none;
@@ -252,6 +268,24 @@ a[href].direct-link:focus:visited,
   margin-bottom: 1rem;
 }
 
+.product .btn {
+  display:block;
+}
+
+.product a[href].btn  {
+  color: #fff;
+  font-weight: 800;
+}
+
 .page__header {
   min-height: 50px;
+}
+
+.navbar {
+  padding: 2rem 0 1rem;
+}
+
+.slug {
+  font-weight: 800;
+  color: var(--brand);
 }

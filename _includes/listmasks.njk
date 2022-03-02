@@ -3,27 +3,32 @@
 {% for item in row %}
 {% if item %}
 <div class="product col-sm-2 col-xs-6">
+
+<div class="product__image">
 <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
 <img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" class="img-fluid" style="max-height:225px;display:block;margin:0 auto">
 </a>
-<div>
+</div>
+
+<div class="product_desc">
   <small>
     <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
       {{item.brand}}
     </a>
   </small>
-</div>
-<div style="height:50px">  
+
+<div>  
   <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
     {{item.set}} - {{item.name}}
   </a>
+</div>
 </div>
 <div class="row">
 
 <div class="col-xs-12 text-center">
  {% if item.link %}
  <a href="{{item.link}}" class="btn btn-primary" target="_blank">
- Buy on</a>
+ Buy</a>
  {% else %}
  <a href="{{item.link}}" class="btn btn-disabled" target="_blank">
  No link
