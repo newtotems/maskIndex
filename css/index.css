@@ -19,6 +19,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, system-ui, sans-serif;
+  font-family: 'Kanit', sans-serif;
   background-color: #f9f9f9;
 }
 p:last-child {
@@ -162,6 +163,7 @@ code {
 .navbar-brand {
   font-weight: 800;
   font-size: 2rem;
+  font-family: 'Kanit', sans-serif;
 }
 
 /* Posts list */
@@ -170,7 +172,6 @@ code {
   padding: 0;
 }
 .postlist-item {
-  display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   counter-increment: start-from -1;
@@ -181,6 +182,8 @@ code {
 }
 a[href].postlist-link {
   color: var(--brand);
+  font-family: 'Kanit', sans-serif;
+  display: block;
 }
 
 .postlist-date,
@@ -298,6 +301,7 @@ a[href].direct-link:focus:visited,
   padding: 2rem 0 1rem;
 }
 
+
 .slug {
   font-weight: 800;
   color: var(--brand);
@@ -309,4 +313,20 @@ a[href].direct-link:focus:visited,
 
 h4 span {
   color: var(--brand);
+}
+
+.neutron {
+  font-family: 'Neuton', serif;
+  font-size: 2rem;
+  color: var(--brand);
+}
+
+.btn-outline-secondary, a[href].btn-outline-secondary {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.btn-outline-secondary:hover, a[href].btn-outline-secondary:hover {
+  background-color: var(--brand);
+  color: var(--white);
 }

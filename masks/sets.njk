@@ -7,8 +7,6 @@ pagination:
 permalink: /masks/{{set.brand|slug}}/{{set.set|slug}}/
 ---
 
-sets
-
 <div>
 {{set.brand|slug}}/{{set.set|slug}}
 </div>
@@ -19,17 +17,63 @@ sets
 
       {% if set.set === item.set %} 
 
-         {% if item.name not in productlist %}
-         {% set productlist = (productlist.push(item.name), productlist) %}
-         {% endif %}
+         {% set productlist = (productlist.push(item), productlist) %}
 
       {% endif %} 
 
 {% endfor %}
 
-{% for product in productlist %}
+{% for row in productlist | reverse | batch(6, '') %}
 
-<div>
-<a href="/masks/{{set.brand|slug}}/{{set.set|slug}}/{{product|slug}}">{{set.brand}} - {{set.set}} - {{product}}</a>
+<div class="row">
+{% for item in row %}
+{% if item %}
+
+<div class="product col-sm-2 col-xs-6">
+
+<div class="product__image">
+<a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" class="img-fluid" style="max-height:225px;display:block;margin:0 auto">
+</a>
 </div>
+
+<div class="product__desc">
+<div>
+  <small>
+    <a href="/masks/{{item.brand|slug}}/">
+    <img src="/img/logos/{{item.brand|slug}}.png" class="img-fluid" alt="{{item.brand}}" title="{{item.brand}}">
+    </a>
+  </small>
+  </div>
+
+<div>  
+  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}">
+    {{item.set}}
+  </a>
+</div>
+<div>  
+  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+    {{item.name}}
+  </a>
+</div>
+</div>
+<div class="row">
+
+<div class="col-xs-12 text-center">
+ {% if item.link %}
+ <a href="{{item.link}}" class="btn btn-primary" target="_blank">
+ Buy</a>
+ {% else %}
+ <a href="{{item.link}}" class="btn btn-disabled" target="_blank">
+ No link
+ </a>
+ {% endif %}
+</div>
+
+</div>
+  </div>
+  {% endif %}
+{% endfor %}
+</div>
+
 {%endfor%}

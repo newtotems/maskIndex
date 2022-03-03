@@ -1,5 +1,5 @@
 ---
-title: Best budget sheet masks
+title: The best budget sheet masks
 description: We've compiled a list of the top ten best sheet masks for collectors on a budget
 date: 2022-03-02
 tags:

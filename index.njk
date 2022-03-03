@@ -10,7 +10,7 @@ eleventyNavigation:
 
 <div class="col-sm-3">
 
-<h4>Top Articles</h4>
+<h4 class="neutron">Top Articles</h4>
 
 {% set postslist = collections.posts %}
 {% include "postslist.njk" %}
@@ -32,16 +32,17 @@ eleventyNavigation:
 {% set brandcount = loop.length %}
 {% endfor%}
 
-<h4 class="text-center">Indexing <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands... and counting!</h4>
-
 <div class="row index-header">
 <div class="col d-flex justify-content-start">
-<h5 class="text-center">Latest Additions..</h5>
+<h5 class="neutron">Latest Additions..</h5>
 </div>
 <div class="col d-flex justify-content-end">
     <a href="/masks/" class="btn btn-outline-secondary">See all masks..</a>
 </div>
 </div>
+
+<h4 class="text-center">Indexing <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands... and counting!</h4>
+
 
 {% set masks = products | head(-12) %}
 

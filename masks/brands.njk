@@ -9,6 +9,9 @@ permalink: /masks/{{brand.name|slug}}/
 
 <h1>{{brand.name}}</h1>
 
+<div class="row">
+<div class="col-sm-3">
+
 {% set setlist = [] %}
 
 {% for item in products %}
@@ -30,15 +33,69 @@ permalink: /masks/{{brand.name|slug}}/
 </div>
 
 {% endfor %}
+</div>
 
-{% for item in products %}
-
- {% if brand.name === item.brand %} 
-
- <div>
-<a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">{{item.brand}} - {{item.set}} - {{item.name}}</a>
- </div>
-
+{% set prods = [] %}
+{% for p in products %}
+ {% if brand.name === p.brand %}
+    {% set prods = (prods.push(p), prods) %}
 {% endif %} 
+{% endfor %}
+
+<div class="col-sm-8">
+ 
+{% for row in prods | reverse | batch(6, '') %}
+
+<div class="row">
+{% for item in row %}
+{% if item %}
+<div class="product col-sm-2 col-xs-6">
+
+<div class="product__image">
+<a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" class="img-fluid" style="max-height:225px;display:block;margin:0 auto">
+</a>
+</div>
+
+<div class="product__desc">
+<div>
+  <small>
+    <a href="/masks/{{item.brand|slug}}/">
+    <img src="/img/logos/{{item.brand|slug}}.png" class="img-fluid" alt="{{item.brand}}" title="{{item.brand}}">
+    </a>
+  </small>
+  </div>
+
+<div>  
+  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}">
+    {{item.set}}
+  </a>
+</div>
+<div>  
+  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+    {{item.name}}
+  </a>
+</div>
+</div>
+<div class="row">
+
+<div class="col-xs-12 text-center">
+ {% if item.link %}
+ <a href="{{item.link}}" class="btn btn-primary" target="_blank">
+ Buy</a>
+ {% else %}
+ <a href="{{item.link}}" class="btn btn-disabled" target="_blank">
+ No link
+ </a>
+ {% endif %}
+</div>
+
+</div>
+  </div>
+  {% endif %}
+{% endfor %}
+</div>
 
 {% endfor %}
+</div>
+</div>
