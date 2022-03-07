@@ -8,16 +8,17 @@ eleventyNavigation:
 
 <div class="row">
 
-<div class="col-sm-3">
-
+<div class="col-md-3">
 <h4 class="neutron">Top Articles</h4>
 
 {% set postslist = collections.posts %}
 {% include "postslist.njk" %}
 
+<h4 class="neutron">Top Brands</h4>
+
 </div>
 
-<div class="col-sm-9 page__index">
+<div class="col-md-9 page__index order-first order-md-last">
 
 {# -------------------------------------- latest products #}
 
@@ -32,7 +33,7 @@ eleventyNavigation:
 {% set brandcount = loop.length %}
 {% endfor%}
 
-<h4 class="text-center">Our index contains <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands... and counting!</h4>
+<h4 class="text-center">The index contains <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands... and counting!</h4>
 
 <div class="row index-header">
 <div class="col d-flex justify-content-start">

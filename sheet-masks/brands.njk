@@ -7,10 +7,10 @@ pagination:
 permalink: /sheet-masks/{{brand.name|slug}}/
 ---
 
-<h1>{{brand.name}}</h1>
-
 <div class="row">
-<div class="col-sm-3">
+<div class="col-md-3">
+<h4 class="neutron">{{brand.name}}</h4>
+
 
 {% set setlist = [] %}
 
@@ -42,7 +42,7 @@ permalink: /sheet-masks/{{brand.name|slug}}/
 {% endif %} 
 {% endfor %}
 
-<div class="col-sm-9">
+<div class="col-md-9">
  
 {% for row in prods | reverse | batch(6, '') %}
 
