@@ -324,6 +324,11 @@ h4 span {
   color: var(--white);
 }
 
+footer {
+  background: #e7edf7;
+    padding: 2rem;
+}
+
 @media (max-width: 576px) { 
   .page__index .hide-mobile {
     display:none;
