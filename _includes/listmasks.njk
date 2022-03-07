@@ -1,31 +1,32 @@
 {% for row in masks | reverse | batch(6, '') %}
-<div class="row">
+<div class="row {% if loop.index >= 2 %}hide-mobile{% endif %}">
 {% for item in row %}
 {% if item %}
-<div class="product col-sm-2 col-xs-6">
+<div class="product col-6 col-md-4 col-lg-2">
 
-<div class="product__image">
-<a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
-<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.jpg" class="img-fluid" style="max-height:225px;display:block;margin:0 auto">
-</a>
-</div>
-
-<div class="product__desc">
-<div>
+  <div>
   <small>
-    <a href="/masks/{{item.brand|slug}}/">
+    <a href="/sheet-masks/{{item.brand|slug}}/">
     <img src="/img/logos/{{item.brand|slug}}.png" class="img-fluid" alt="{{item.brand}}" title="{{item.brand}}">
     </a>
   </small>
   </div>
 
-<div>  
-  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}">
+<div class="product__image">
+<a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.png" class="img-fluid" style="max-height:225px;display:block;margin:0 auto">
+</a>
+</div>
+
+<div class="product__desc">
+
+<div class="text-center">  
+  <a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}">
     {{item.set}}
   </a>
 </div>
-<div>  
-  <a href="/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
+<div class="text-center">  
+  <a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
     {{item.name}}
   </a>
 </div>
@@ -36,11 +37,7 @@
  {% if item.link %}
  <a href="{{item.link}}" class="btn btn-primary" target="_blank">
  Buy</a>
- {% else %}
- <a href="{{item.link}}" class="btn btn-disabled" target="_blank">
- No link
- </a>
- {% endif %}
+ {% else %}{% endif %}
 </div>
 
 </div>
