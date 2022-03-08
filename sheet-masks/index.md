@@ -13,9 +13,9 @@ layout: layouts/home.njk
 <div class="row">
 {% for brand in brands %}
 {% if brand.featured === "yes" %}
-<div class="col-sm-6">
+<div class="col-sm-6 product__set">
 <a href="/sheet-masks/{{brand.name|slug|replace("'","%27")}}/" class="btn btn">
-<img src="/img/logos/{{brand.name|slug}}.png" class="img-fluid" alt="{{brand.name}}" title="{{brand.name}}">
+{{brand.name}}
 </a>
 </div>
 {% endif   %}

@@ -7,10 +7,17 @@ pagination:
 permalink: /sheet-masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}/
 ---
 
-products
+<div class="row">
 
-<img src="/img/masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}.png">
-<div>
-{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}
+<div class="col-3">
+   <h4 class="neutron">
+   {{product.brand}} {{product.set}} {{product.name}}
+   </h4>
+</div>
+
+<div class="col-9">
+   <img src="/img/masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}.png">
+</div>
+
 </div>
 

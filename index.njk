@@ -16,6 +16,19 @@ eleventyNavigation:
 
 <h4 class="neutron">Top Brands</h4>
 
+<div class="row">
+{% for brand in brands %}
+{% if brand.featured === "yes" %}
+<div class="col-sm-6 product__set">
+  <a href="/sheet-masks/{{brand.name|slug}}" class="p-2">{{brand.name}}</a>
+  </div>
+{% endif %}
+{% endfor %}
+
+
+</div>
+
+
 </div>
 
 <div class="col-md-9 page__index order-first order-md-last">
@@ -47,7 +60,7 @@ eleventyNavigation:
 
 
 
-{% set masks = products | head(-12) %}
+{% set masks = products | head(-18) %}
 
 {% include "listmasks.njk" %}
 

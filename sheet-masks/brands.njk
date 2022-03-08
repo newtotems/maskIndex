@@ -11,7 +11,10 @@ permalink: /sheet-masks/{{brand.name|slug}}/
 <div class="col-md-3">
 <h4 class="neutron">{{brand.name}}</h4>
 
+<p>Some info about {{brand.name}}</p>
+<p>Click here to view the brand page`</p>
 
+<h4 class="neutron">{{brand.name}} Sheet Masks</h4>
 {% set setlist = [] %}
 
 {% for item in products %}
@@ -26,15 +29,18 @@ permalink: /sheet-masks/{{brand.name|slug}}/
 
 {% endfor %}
 
+<div class="row">
 {% for item in setlist %}
 
-<div>
-<a href="/sheet-masks/{{brand.name|slug}}/{{item|slug}}">{{item}}</a>
+<div class="col-sm-6 product__set">
+<a href="/sheet-masks/{{brand.name|slug}}/{{item|slug}}" class="p-2">{{item}}</a>
 </div>
-
 {% endfor %}
 </div>
+</div>
 
+
+<div class="col-md-9">
 {% set prods = [] %}
 {% for p in products %}
  {% if brand.name === p.brand %}
@@ -42,60 +48,10 @@ permalink: /sheet-masks/{{brand.name|slug}}/
 {% endif %} 
 {% endfor %}
 
-<div class="col-md-9">
- 
-{% for row in prods | reverse | batch(6, '') %}
-
-<div class="row">
-{% for item in row %}
-{% if item %}
-<div class="product col-sm-2 col-xs-6">
-
-<div class="product__image">
-<a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
-<img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.png" class="img-fluid" style="max-height:225px;display:block;margin:0 auto">
-</a>
-</div>
-
-<div class="product__desc">
-<div>
-  <small>
-    <a href="/sheet-masks/{{item.brand|slug}}/">
-    <img src="/img/logos/{{item.brand|slug}}.png" class="img-fluid" alt="{{item.brand}}" title="{{item.brand}}">
-    </a>
-  </small>
+{% set masks = prods %}
+{% include "listmasks.njk" %}
   </div>
 
-<div>  
-  <a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}">
-    {{item.set}}
-  </a>
-</div>
-<div>  
-  <a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
-    {{item.name}}
-  </a>
-</div>
-</div>
-<div class="row">
-
-<div class="col-xs-12 text-center">
- {% if item.link %}
- <a href="{{item.link}}" class="btn btn-primary" target="_blank">
- Buy</a>
- {% else %}
- <a href="{{item.link}}" class="btn btn-disabled" target="_blank">
- No link
- </a>
- {% endif %}
 </div>
 
-</div>
-  </div>
-  {% endif %}
-{% endfor %}
-</div>
-
-{% endfor %}
-</div>
 </div>

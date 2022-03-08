@@ -1,8 +1,8 @@
 {% for row in masks | reverse | batch(6, '') %}
-<div class="row {% if loop.index >= 2 %}hide-mobile{% endif %}">
+<div class="row {% if loop.index >= 3 %}hide-mobile{% endif %}">
 {% for item in row %}
 {% if item %}
-<div class="product col-6 col-md-4 col-lg-4 col-xl-2">
+<div class="product col-4 col-xl-2">
 
   <div>
   <small>
@@ -12,6 +12,12 @@
   </small>
   </div>
 
+  <div class="text-center product__set">  
+  <a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}">
+    {{item.set}}
+  </a>
+</div>
+
 <div class="product__image">
 <a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
 <img src="/img/masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}.png" class="img-fluid" style="max-height:225px;display:block;margin:0 auto">
@@ -20,12 +26,7 @@
 
 <div class="product__desc">
 
-<div class="text-center">  
-  <a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}">
-    {{item.set}}
-  </a>
-</div>
-<div class="text-center">  
+<div class="text-center product__name">  
   <a href="/sheet-masks/{{item.brand|slug}}/{{item.set|slug}}/{{item.name|slug}}">
     {{item.name}}
   </a>
