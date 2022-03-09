@@ -285,6 +285,10 @@ a[href].direct-link:focus:visited,
   border-radius: 5px;
 }
 
+.product__image {
+  min-height: 200px;
+}
+
 .product__set a:hover {
   background: var(--brand);
   color: #fff;
@@ -370,4 +374,10 @@ footer {
     height: 0;
     overflow: hidden;
   }
+ }
+
+ @media (max-width: 500px) {
+.product__image {
+  min-height: 100px;
+}
  }
