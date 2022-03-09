@@ -164,6 +164,7 @@ code {
   font-weight: 800;
   font-size: 2rem;
   font-family: 'Kanit', sans-serif;
+  padding-bottom: 0;
 }
 
 /* Posts list */
@@ -281,6 +282,12 @@ a[href].direct-link:focus:visited,
   background-color: #e7edf7;
   text-decoration: none;
   display: block;
+  border-radius: 5px;
+}
+
+.product__set a:hover {
+  background: var(--brand);
+  color: #fff;
 }
 
 .product__name a {
@@ -322,6 +329,12 @@ h4 span {
 }
 
 .neutron {
+  font-family: 'Neuton', serif;
+  font-size: 2rem;
+  color: var(--brand);
+}
+
+.neutron a[href] {
   font-family: 'Neuton', serif;
   font-size: 2rem;
   color: var(--brand);

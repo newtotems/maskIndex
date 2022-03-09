@@ -21,7 +21,44 @@ layout: layouts/home.njk
 {% endif   %}
 {% endfor %}
 <h4 class="neutron">By Ingredient</h4>
+{% set ingredientlist = [] %}
+{% for product in products %}
+{% for ingredient in product.ingredients %}
+
+         {% if ingredient not in ingredientlist %}
+         {% set ingredientlist = (ingredientlist.push(ingredient), ingredientlist) %}
+         {% endif %}
+
+{% endfor %}
+{% endfor %}
+
+{% for ingredient in ingredientlist %}
+<div class="col-sm-6 product__set">
+<a href="/sheet-masks/ingredients/{{ingredient|slug}}/" class="btn btn">
+{{ingredient}}
+</a>
+</div>
+{% endfor %}
+
 <h4 class="neutron">By Colour</h4>
+{% set colourlist = [] %}
+{% for product in products %}
+{% if product.colour %}
+{% if product.colour not in colourlist %}
+         {% set colourlist = (colourlist.push(product.colour), colourlist) %}
+{% endif %}
+{% endif %}
+
+{% endfor %}
+
+{% for c in colourlist %}
+<div class="col-sm-6 product__set">
+<a href="/sheet-masks/colours/{{c|slug}}/" class="btn btn">
+{{c}}
+</a>
+</div>
+{% endfor %}
+
 <h4 class="neutron">By Country</h4>
 </div>
 

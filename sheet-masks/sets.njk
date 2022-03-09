@@ -7,10 +7,40 @@ pagination:
 permalink: /sheet-masks/{{set.brand|slug}}/{{set.set|slug}}/
 ---
 
-
 <div class="row">
 <div class="col-md-3">
-<h4 class="neutron">{{set.brand|slug}} - {{set.set|slug}}</h4>
+<h4 class="neutron">{{set.brand}}</h4>
+
+<p>Some info about {{set.brand}}</p>
+<p>Click here to view the brand page</p>
+
+<h4 class="neutron">{{set.brand}} Sheet Masks</h4>
+{% set setlist = [] %}
+
+{% for item in products %}
+
+      {% if set.brand === item.brand %} 
+
+         {% if item.set not in setlist %}
+         {% set setlist = (setlist.push(item.set), setlist) %}
+         {% endif %}
+
+      {% endif %} 
+
+{% endfor %}
+
+<div class="row">
+{% for item in setlist %}
+
+<div class="col-sm-6 product__set">
+  {% if set.set == item %}
+  {{item}}
+  {% else %}
+<a href="/sheet-masks/{{set.brand|slug}}/{{item|slug}}" class="p-2">{{item}}</a>
+{% endif %}
+</div>
+{% endfor %}
+</div>
 </div>
 
 <div class="col-md-9">
@@ -22,10 +52,8 @@ permalink: /sheet-masks/{{set.brand|slug}}/{{set.set|slug}}/
       {% endif %} 
 {% endfor %}
 
-
 {% set masks = productlist  %}
 {% include "listmasks.njk" %}
 
 </div>
-
 </div>
