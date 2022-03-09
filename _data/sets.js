@@ -15,7 +15,7 @@ module.exports = async function() {
 	let data = productObs.data.map(po => {
 		return po.data;
 	});
-	console.log(data.length + ' products loaded from Fauna');
+	console.log(data.length + ' sets loaded from Fauna');
 	return data;
 
 }

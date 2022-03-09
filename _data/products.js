@@ -7,7 +7,10 @@ module.exports = async function() {
 
 	let productObs = await client.query(
 		q.Map(
-			q.Paginate(q.Documents(q.Collection('masks'))),
+			q.Paginate(
+				q.Documents(q.Collection('masks')),
+				{ size: 250 }
+				),
             //q.Paginate(q.Match(q.Index('masks_by_brand'), 'Tony Moly')),
 			q.Lambda(x => q.Get(x))
 		)
@@ -15,7 +18,6 @@ module.exports = async function() {
 	let data = productObs.data.map(po => {
 		return po.data;
 	});
-	console.log(data.length + ' products loaded from Fauna');
+	console.log(data.length + ' product listings loaded from Fauna');
 	return data;
-
 }
