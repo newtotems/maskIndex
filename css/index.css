@@ -278,7 +278,7 @@ a[href].direct-link:focus:visited,
 
 .product__set a {
   padding: 2px;
-  margin: 5px 0;
+  margin: 10px 0;
   background-color: #e7edf7;
   text-decoration: none;
   display: block;
@@ -297,7 +297,7 @@ a[href].direct-link:focus:visited,
 .product__name a {
   color: #4d6c9f;
   display: block;
-  padding: 2px;
+  padding: 10px 0;
 }
 
 .product .btn {
@@ -381,3 +381,4 @@ footer {
   min-height: 100px;
 }
  }
+ 
