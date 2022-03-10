@@ -7,14 +7,14 @@ layout: layouts/home.njk
 ---
 
 <div class="row">
-   <div class="col-md-3">
+   <div class="col-md-3 leftcol">
 
 <h4 class="neutron">By Brand</h4>
 <div class="row">
 {% for brand in brands %}
 {% if brand.featured === "yes" %}
-<div class="col-sm-6 product__set">
-<a href="/sheet-masks/{{brand.name|slug|replace("'","%27")}}/" class="btn btn">
+<div class="col-6 product__set">
+<a href="/sheet-masks/{{brand.name|slug|replace("'","")}}/" class="btn btn">
 {{brand.name}}
 </a>
 </div>
@@ -33,7 +33,7 @@ layout: layouts/home.njk
 {% endfor %}
 
 {% for ingredient in ingredientlist %}
-<div class="col-sm-6 product__set">
+<div class="col-6 product__set">
 <a href="/sheet-masks/ingredients/{{ingredient|slug}}/" class="btn btn">
 {{ingredient}}
 </a>
@@ -52,7 +52,7 @@ layout: layouts/home.njk
 {% endfor %}
 
 {% for c in colourlist %}
-<div class="col-sm-6 product__set">
+<div class="col-6 product__set">
 <a href="/sheet-masks/colours/{{c|slug}}/" class="btn btn">
 {{c}}
 </a>
@@ -65,6 +65,25 @@ layout: layouts/home.njk
    </div>
 
    <div class="col-md-9">
+   {# -------------------------------------- latest products #}
+
+{% set productcount = "" %}
+{% set brandcount = "" %}
+
+{% for p in products %}
+{% set productcount = loop.length %}
+{% endfor%}
+
+{% for p in brands %}
+{% set brandcount = loop.length %}
+{% endfor%}
+
+<h4 class="text-center">The index contains <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands... and counting!</h4>
+<p class="text-center" style="
+    max-width: 100%;
+    background: #ededed;
+">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
+
    {% set masks = pagination.items %}
 {% include "listmasks.njk" %}
 

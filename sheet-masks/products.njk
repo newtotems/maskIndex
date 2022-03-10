@@ -4,7 +4,7 @@ pagination:
    data: products
    alias: product
    size: 1
-permalink: /sheet-masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}/
+permalink: /sheet-masks/{{product.brand|slug|replace("'","")}}/{{product.set|slug|replace("'","")}}/{{product.name|slug|replace("'","")}}/
 ---
 
 <div class="row">
@@ -16,7 +16,7 @@ permalink: /sheet-masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.na
 </div>
 
 <div class="col-9">
-   <img src="/img/masks/{{product.brand|slug}}/{{product.set|slug}}/{{product.name|slug}}.png">
+   <img src="/img/masks/{{product.brand|slug|replace("'","")}}/{{product.set|slug|replace("'","")}}/{{product.name|slug|replace("'","")}}.png">
 </div>
 
 </div>

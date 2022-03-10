@@ -20,7 +20,7 @@ eleventyNavigation:
 {% for brand in brands %}
 {% if brand.featured === "yes" %}
 <div class="col-sm-6 product__set">
-  <a href="/sheet-masks/{{brand.name|slug}}" class="p-2">{{brand.name}}</a>
+  <a href="/sheet-masks/{{brand.name|slug|replace("'","")}}" class="p-2">{{brand.name}}</a>
   </div>
 {% endif %}
 {% endfor %}
@@ -47,6 +47,10 @@ eleventyNavigation:
 {% endfor%}
 
 <h4 class="text-center">The index contains <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands... and counting!</h4>
+<p class="text-center" style="
+    max-width: 100%;
+    background: #ededed;
+">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
 
 <div class="row index-header">
 <div class="col d-flex justify-content-start">

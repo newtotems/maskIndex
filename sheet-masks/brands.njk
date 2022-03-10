@@ -4,7 +4,7 @@ pagination:
    data: brands
    alias: brand
    size: 1
-permalink: /sheet-masks/{{brand.name|slug}}/
+permalink: /sheet-masks/{{brand.name|slug|replace("'","")}}/
 ---
 
 <div class="row">
@@ -15,11 +15,12 @@ permalink: /sheet-masks/{{brand.name|slug}}/
 <p>Click here to view the brand page</p>
 
 <h4 class="neutron">{{brand.name}} Sheet Masks</h4>
-{% set setlist = [] %}
 
+
+{% set setlist = [] %}
 {% for item in products %}
 
-      {% if brand.name === item.brand %} 
+      {% if brand.name | lower === item.brand | lower %} 
 
          {% if item.set not in setlist %}
          {% set setlist = (setlist.push(item.set), setlist) %}
@@ -33,7 +34,7 @@ permalink: /sheet-masks/{{brand.name|slug}}/
 {% for item in setlist %}
 
 <div class="col-sm-6 product__set">
-<a href="/sheet-masks/{{brand.name|slug}}/{{item|slug}}" class="p-2">{{item}}</a>
+<a href="/sheet-masks/{{brand.name|slug|replace("'","")}}/{{item|slug|replace("'","")}}" class="p-2">{{item}}</a>
 </div>
 {% endfor %}
 </div>
@@ -42,11 +43,22 @@ permalink: /sheet-masks/{{brand.name|slug}}/
 
 <div class="col-md-9">
 {% set prods = [] %}
+{% set ccount = [] %}
 {% for p in products %}
  {% if brand.name === p.brand %}
     {% set prods = (prods.push(p), prods) %}
 {% endif %} 
 {% endfor %}
+
+{% for c in prods %}
+{% set ccount = loop.length %}
+{% endfor %}
+
+<h4 class="text-center">The index contains <span>{{ccount}}</span> sheet masks from <span>{{brand.name}}</span> ... and counting!</h4>
+<p class="text-center" style="
+    max-width: 100%;
+    background: #ededed;
+">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
 
 {% set masks = prods %}
 {% include "listmasks.njk" %}
