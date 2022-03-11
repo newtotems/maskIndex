@@ -84,14 +84,18 @@ layout: layouts/home.njk
     background: #ededed;
 ">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
 
+<div class="row pagination">
+<div class="col-6 text-left"><p>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</p></div>
+<div class="col-6 text-right"><p>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</p></div>
+</div>
+
    {% set masks = pagination.items %}
 {% include "listmasks.njk" %}
 
- <ol>
-    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-  </ol>
-
+<div class="row pagination">
+<div class="col-6 text-left"><p>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</p></div>
+<div class="col-6 text-right"><p>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</p></div>
+</div>
 
    </div>
 </div>
