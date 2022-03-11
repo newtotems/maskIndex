@@ -4,7 +4,7 @@ pagination:
    data: sets
    alias: set
    size: 1
-permalink: /sheet-masks/{{set.brand|slug}}/{{set.set|slug}}/
+permalink: /sheet-masks/{{set.brand|slug|replace("'","")}}/{{set.set|slug|replace("'","")}}/
 ---
 
 <div class="row">
