@@ -11,8 +11,9 @@ permalink: /sheet-masks/{{set.brand|slug|replace("'","")}}/{{set.set|slug|replac
 <div class="col-md-3">
 <h4 class="neutron">{{set.brand}}</h4>
 
-<p>Some info about {{set.brand}}</p>
-<p>Click here to view the brand page</p>
+{% include 'brandinfo/' + set.brand|slug|replace("'","") + '.html' %}
+
+<p class="product__set col-4 text-center"><a href="/sheet-masks/{{set.brand|slug|replace("'","")}}/">{{set.brand}}</a></p>
 
 <h4 class="neutron">{{set.brand}} Sheet Masks</h4>
 {% set setlist = [] %}
@@ -44,13 +45,22 @@ permalink: /sheet-masks/{{set.brand|slug|replace("'","")}}/{{set.set|slug|replac
 </div>
 
 <div class="col-md-9">
+
 {% set productlist = [] %}
+{% set ccount = 0 %}
 
 {% for item in products %}
       {% if set.set === item.set %} 
          {% set productlist = (productlist.push(item), productlist) %}
-      {% endif %} 
+         {% set ccount = ccount + 1 %}
+      {% endif %}
 {% endfor %}
+
+<h4 class="text-center">Listing <span>{{ccount}}</span> sheet mask{% if ccount > 1%}s{%endif%} from <span>{{set.brand}} {{set.set}}</span></h4>
+<p class="text-center" style="
+    max-width: 100%;
+    background: #ededed;
+">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
 
 {% set masks = productlist  %}
 {% include "listmasks.njk" %}

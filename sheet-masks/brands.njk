@@ -11,11 +11,9 @@ permalink: /sheet-masks/{{brand.name|slug|replace("'","")}}/
 <div class="col-md-3">
 <h4 class="neutron">{{brand.name}}</h4>
 
-<p>Some info about {{brand.name}}</p>
-<p>Click here to view the brand page</p>
+{% include 'brandinfo/' + brand.name|slug|replace("'","") + '.html' %}
 
-<h4 class="neutron">{{brand.name}} Sheet Masks</h4>
-
+<h4 class="neutron">{{brandslug}} Sheet Masks</h4>
 
 {% set setlist = [] %}
 {% for item in products %}
@@ -54,7 +52,7 @@ permalink: /sheet-masks/{{brand.name|slug|replace("'","")}}/
 {% set ccount = loop.length %}
 {% endfor %}
 
-<h4 class="text-center">The index contains <span>{{ccount}}</span> sheet masks from <span>{{brand.name}}</span> ... and counting!</h4>
+<h4 class="text-center">Listing <span>{{ccount}}</span> sheet masks from <span>{{brand.name}}</span></h4>
 <p class="text-center" style="
     max-width: 100%;
     background: #ededed;

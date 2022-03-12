@@ -13,7 +13,7 @@ layout: layouts/home.njk
 <div class="row">
 {% for brand in brands %}
 {% if brand.featured === "yes" %}
-<div class="col-6 product__set">
+<div class="col-4 product__set">
 <a href="/sheet-masks/{{brand.name|slug|replace("'","")}}/" class="btn btn">
 {{brand.name}}
 </a>
@@ -35,7 +35,7 @@ layout: layouts/home.njk
 {% endfor %}
 
 {% for ingredient in ingredientlist %}
-<div class="col-6 product__set">
+<div class="col-4 product__set">
 <a href="/sheet-masks/ingredients/{{ingredient|slug}}/" class="btn btn">
 {{ingredient}}
 </a>
@@ -55,7 +55,7 @@ layout: layouts/home.njk
 {% endfor %}
 
 {% for c in colourlist %}
-<div class="col-6 product__set">
+<div class="col-4 product__set">
 <a href="/sheet-masks/colours/{{c|slug}}/" class="btn btn">
 {{c}}
 </a>
@@ -83,24 +83,35 @@ layout: layouts/home.njk
 {% set brandcount = loop.length %}
 {% endfor%}
 
-<h4 class="text-center">The index contains <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands... and counting!</h4>
-<p class="text-center" style="max-width: 100%;
-    background: #ededed;
-    font-size: .9rem;
-    padding: 2px 0;
-">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
 
-<div class="row pagination">
-<div class="col-6 text-left"><p>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</p></div>
-<div class="col-6 text-right"><p>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</p></div>
+<h4 class="text-center">Listing <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands</h4>
+<p class="text-center" style="max-width: 100%;font-size: .9rem;padding: 2px 0;">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
+
+<div class="row pagination justify-content-between">
+
+<div class="col-3 pagination__item pagination__prev">
+  <p class="text-center"> {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" class="text-center">Previous</a>{% else %}<span class="text-center">Previous</span>{% endif %}</p>
+</div>
+
+<div class="col-3 text-center pagination__item pagination__next">
+  <p class="text-center"> {% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="text-center">Next</a>{% else %}<span class="text-center">Next</span>{% endif %}</p>
+</div>
+
 </div>
 
    {% set masks = pagination.items %}
 {% include "listmasks.njk" %}
 
-<div class="row pagination">
-<div class="col-6 text-left"><p>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</p></div>
-<div class="col-6 text-right"><p>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</p></div>
+<div class="row pagination justify-content-between">
+
+<div class="col-3 pagination__item pagination__prev">
+  <p class="text-center"> {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" class="text-center">Previous</a>{% else %}<span class="text-center">Previous</span>{% endif %}</p>
+</div>
+
+<div class="col-3 text-center pagination__item pagination__next">
+  <p class="text-center"> {% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="text-center">Next</a>{% else %}<span class="text-center">Next</span>{% endif %}</p>
+</div>
+
 </div>
 
    </div>

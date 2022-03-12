@@ -141,7 +141,6 @@ code {
   text-decoration: none;
 }
 
-/* Nav */
 .nav {
   padding: 0;
   list-style: none;
@@ -150,7 +149,6 @@ code {
 }
 .nav-item {
   display: inline-block;
-  margin-right: 1em;
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
@@ -349,6 +347,23 @@ a[href].direct-link:focus:visited,
   min-height: 50px;
 }
 
+.pagination a, .pagination span {
+  display:block;
+  padding:5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.pagination a, .pagination a[href] {
+  background-color: #e7edf7;
+}
+
+.pagination span {
+  background-color: #ededed;
+  color: #333;
+}
+
 .navbar {
   padding: 0.5rem 0 0;
   display: block;
@@ -430,7 +445,7 @@ footer {
   }
 
   .neutron {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 2rem;
 }
 
