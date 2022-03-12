@@ -51,7 +51,7 @@ a[href]:visited {
 }
 
 main {
-  padding: 3rem;
+  padding: 1rem;
 }
 main :first-child {
   margin-top: 0;
@@ -352,6 +352,8 @@ a[href].direct-link:focus:visited,
 .slug {
   font-weight: 800;
   color: var(--brand);
+  line-height: 1rem;
+  margin-bottom: 10px;
 }
 
 .index-header {
@@ -420,6 +422,11 @@ footer {
   .product__set a {
     margin: 5px 0;
   }
+
+  .neutron {
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
 
  }
  

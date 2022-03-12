@@ -64,7 +64,7 @@ layout: layouts/home.njk
 
    </div>
 
-   <div class="col-md-9">
+   <div class="col-md-9 order-first order-md-last">
    {# -------------------------------------- latest products #}
 
 {% set productcount = "" %}
