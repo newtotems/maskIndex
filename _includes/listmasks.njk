@@ -1,5 +1,5 @@
 {% for row in masks | reverse | batch(6, '') %}
-<div class="row {% if loop.index >= 3 %}hide-mobile{% endif %}">
+<div class="product__row row {% if loop.index >= 3 %}hide-mobile{% endif %}">
 {% for item in row %}
 {% if item %}
 <div class="product col-4 col-xl-2">

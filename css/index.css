@@ -267,6 +267,7 @@ a[href].direct-link:focus:visited,
   color: #aaa;
 }
 
+
 .product {
   padding: 12px;
   margin-bottom: 1rem;
@@ -276,13 +277,18 @@ a[href].direct-link:focus:visited,
   font-size: 0.9rem;
 }
 
+.product__row {
+  padding: 0 10px;
+}
+
 .product__set a {
-  padding: 2px;
   margin: 10px 0;
   background-color: #e7edf7;
   text-decoration: none;
   display: block;
   border-radius: 5px;
+  line-height: 14px;
+  padding: 6px;
 }
 
 .leftcol .product__set a {
@@ -426,6 +432,10 @@ footer {
   .neutron {
     font-size: 1.2rem;
     line-height: 2rem;
+}
+
+.social-media, .social-media a {
+  width: 100%;
 }
 
  }

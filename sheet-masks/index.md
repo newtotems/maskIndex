@@ -20,6 +20,8 @@ layout: layouts/home.njk
 </div>
 {% endif   %}
 {% endfor %}
+
+
 <h4 class="neutron">By Ingredient</h4>
 {% set ingredientlist = [] %}
 {% for product in products %}
@@ -40,6 +42,7 @@ layout: layouts/home.njk
 </div>
 {% endfor %}
 
+
 <h4 class="neutron">By Colour</h4>
 {% set colourlist = [] %}
 {% for product in products %}
@@ -59,7 +62,9 @@ layout: layouts/home.njk
 </div>
 {% endfor %}
 
+
 <h4 class="neutron">By Country</h4>
+
 </div>
 
    </div>
@@ -79,9 +84,10 @@ layout: layouts/home.njk
 {% endfor%}
 
 <h4 class="text-center">The index contains <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands... and counting!</h4>
-<p class="text-center" style="
-    max-width: 100%;
+<p class="text-center" style="max-width: 100%;
     background: #ededed;
+    font-size: .9rem;
+    padding: 2px 0;
 ">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
 
 <div class="row pagination">
