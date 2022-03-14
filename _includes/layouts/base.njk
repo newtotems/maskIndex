@@ -14,6 +14,17 @@
      <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+
+
+<!-- Glow Cookies v3.0.1 -->
+    <script src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.0.1/src/glowCookies.min.js"></script>
+    <script>
+        glowCookies.start('en', { 
+            analytics: 'UA-177000090-1', 
+            policyLink: '/privacy-policy/'
+        });
+    </script>
+
   </head>
   <body>
 
@@ -59,18 +70,6 @@ Browse All Masks
     </footer>
 
 <link rel="stylesheet" href="css/glowCookies.css" />
-<script src="js/glowCookies.js"></script>
-
-
-<script>
-
-glowCookies.start('en', { 
-  style: 2,
-customScript: [{ type: 'src', position: 'head', content: 'https://www.googletagmanager.com/gtag/js?id=GTM-W33732D' }],
-  policyLink: '/privacy-policy'
-});
-
-</script>
 
   </body>
 </html>
