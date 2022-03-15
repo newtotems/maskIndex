@@ -1,21 +1,21 @@
 {
   "title": "Sheet Mask Index",
-  "url": "https://www.sheetmaskindex.com/",
+  "url": "https://sheetmaskindex.com/",
   "language": "en",
   "description": "",
   "feed": {
     "subtitle": "",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://www.sheetmaskindex.com/"
+    "id": "https://sheetmaskindex.com/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://www.sheetmaskindex.com/feed/feed.json"
+    "url": "https://sheetmaskindex.com/feed/feed.json"
   },
   "author": {
     "name": "Mask Index",
     "email": "hi@www.sheetmaskindex.com",
-    "url": "https://www.sheetmaskindex.com/about/"
+    "url": "https://sheetmaskindex.com/about/"
   }
 }
