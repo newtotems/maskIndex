@@ -267,7 +267,7 @@ a[href].direct-link:focus:visited,
 
 
 .product {
-  padding: 12px;
+  padding: 5px;
   margin-bottom: 1rem;
   border-right: 5px solid #f9f9f9;
   border-left: 5px solid #f9f9f9;
@@ -277,6 +277,13 @@ a[href].direct-link:focus:visited,
 
 .product__row {
   padding: 0 10px;
+}
+
+.product__logo{
+  width: 100%;
+  display: block;
+  margin: 5px auto 5px!important;
+  max-width: 110px;
 }
 
 .product__set a {
@@ -305,43 +312,34 @@ a[href].direct-link:focus:visited,
 .product__name a {
   color: #4d6c9f;
   display: block;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 
 .product .btn {
   display:block;
   position: relative;
+  line-height: 1rem;
+  padding: 3px;
+  margin: 5px;
+}
+
+.product__linkprovider {
+  display: block;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1rem;
+}
+
+.product__product-image {
+  max-height:225px;
+  display:block;
 }
 
 .product a[href].btn  {
   color: #fff;
   font-weight: 800;
 }
-
-
-.product__buy-btn span {
-  display: block;
-  position: absolute;
-  top: -5px;
-  left: 5px;
-  width: 30px;
-  height: 30px;
-  background-color: var(--brand);
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  border: 1px solid white;
-  }
-
-  .product__buy-btn .stylevana {
-    background-image: url('../img/logos/affiliate/stylevana.gif');
-    background-size: contain;
-  }
-
-  .product__buy-btn .klipshop {
-    background-image: url('../img/logos/affiliate/klipshop.gif');
-    background-size: contain;
-  }
 
 .page__header {
   min-height: 50px;
@@ -372,6 +370,7 @@ a[href].direct-link:focus:visited,
 
 .slug {
   font-weight: 800;
+  font-size: 1rem;
   color: var(--brand);
   line-height: 1rem;
   margin-bottom: 10px;
@@ -387,7 +386,7 @@ h4 span {
 
 .neutron {
   font-family: 'Neuton', serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--brand);
 }
 
@@ -433,12 +432,6 @@ footer {
 .product__image {
   min-height: 100px;
 }
-
-.product__buy-btn span {
-  left: -5px;
-  width: 20px;
-  height: 20px;
-  }
 
   .product__set a {
     margin: 5px 0;

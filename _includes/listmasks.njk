@@ -7,7 +7,7 @@
   <div>
   <small>
     <a href="/sheet-masks/{{item.brand|slug|replace("'","")}}/">
-    <img src="/img/logos/{{item.brand|slug|replace("'","")}}.png" class="img-fluid" alt="{{item.brand}}" title="{{item.brand}}">
+    <img src="/img/logos/{{item.brand|slug|replace("'","")}}.png" class="product__logo" alt="{{item.brand}}" title="{{item.brand}}">
     </a>
   </small>
   </div>
@@ -19,8 +19,8 @@
 </div>
 
 <div class="product__image">
-<a href="/sheet-masks/{{item.brand|slug|replace("'","")}}/{{item.set|slug}}/{{item.name|slug|replace("'","")}}">
-<img src="/img/masks/{{item.brand|slug|replace("'","")}}/{{item.set|slug|replace("'","")}}/{{item.name|slug|replace("'","")}}.png" class="img-fluid" alt="{{item.brand|slug|replace("'","")}} {{item.set|slug}} {{item.name|slug|replace("'","")}}" title="{{item.brand|slug|replace("'","")}} {{item.set|slug}} {{item.name|slug|replace("'","")}}" style="max-height:225px;display:block;margin:0 auto">
+<a href="/sheet-masks/{{item.brand|slug|replace("'","")}}/{{item.set|slug}}/{{item.name|slug|replace("'","")}}" style="display:block;padding: 5px;">
+<img src="/img/masks/{{item.brand|slug|replace("'","")}}/{{item.set|slug|replace("'","")}}/{{item.name|slug|replace("'","")}}.png" class="img-fluid product__product-image" alt="{{item.brand}} {{item.set}} {{item.name}}" title="{{item.brand}} {{item.set}} {{item.name}}">
 </a>
 </div>
 
@@ -35,9 +35,16 @@
 <div class="row">
 
 <div class="col-xs-12 text-center">
- {% if item.link|length >0 %} 
- <a href="{{item.link}}" class="btn btn-primary product__buy-btn" target="_blank"><span class="{{item.linkprovider|lower}}"></span>Buy</a>
- {% else %}{% endif %}
+ {% if item.link|length >0 and item.linkprovider %} 
+ <a href="{{item.link}}" class="btn btn-primary product__buy-btn" target="_blank">
+   Buy
+   <span class="product__linkprovider">on {{item.linkprovider}}</span>
+   </a>
+ {% else %}
+ 
+ 
+ 
+ {% endif %}
 </div>
 
 </div>
