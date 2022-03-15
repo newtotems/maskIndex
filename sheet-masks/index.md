@@ -4,6 +4,7 @@ pagination:
    size: 24
    data: products
 layout: layouts/home.njk
+title: Sheet Mask Index - Browse all sheet masks
 ---
 
 <div class="row">

@@ -5,6 +5,8 @@ pagination:
    alias: set
    size: 1
 permalink: /sheet-masks/{{set.brand|slug|replace("'","")}}/{{set.set|slug|replace("'","")}}/
+eleventyComputed:
+   title: "{{set.brand}} {{set.set}} Sheet Masks"
 ---
 
 <div class="row">
