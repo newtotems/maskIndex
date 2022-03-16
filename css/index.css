@@ -298,7 +298,7 @@ a[href].direct-link:focus:visited,
 }
 
 .product__set a {
-  margin: 10px 0;
+  margin: 3px 5px;
   background-color: #e7edf7;
   text-decoration: none;
   display: block;
@@ -307,8 +307,8 @@ a[href].direct-link:focus:visited,
   padding: 6px;
 }
 
-.leftcol .product__set a {
-  margin: 5px 0;
+.product .product__set a {
+ margin: 10px 0;
 }
 
 .product__image {

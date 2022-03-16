@@ -14,8 +14,8 @@ title: Sheet Mask Index - Browse all sheet masks
 <div class="row">
 {% for brand in brands %}
 {% if brand.featured === "yes" %}
-<div class="col-4 product__set">
-<a href="/sheet-masks/{{brand.name|slug|replace("'","")}}/" class="btn btn">
+<div class="col-4 product__set m-0 p-0 text-center">
+<a href="/sheet-masks/{{brand.name|slug|replace("'","")}}/" class="btn btn"> 
 {{brand.name}}
 </a>
 </div>
@@ -36,7 +36,7 @@ title: Sheet Mask Index - Browse all sheet masks
 {% endfor %}
 
 {% for ingredient in ingredientlist %}
-<div class="col-4 product__set">
+<div class="col-4 product__set m-0 p-0 text-center">
 <a href="/sheet-masks/ingredients/{{ingredient|slug}}/" class="btn btn">
 {{ingredient}}
 </a>
@@ -56,7 +56,7 @@ title: Sheet Mask Index - Browse all sheet masks
 {% endfor %}
 
 {% for c in colourlist %}
-<div class="col-4 product__set">
+<div class="col-4 product__set m-0 p-0 text-center">
 <a href="/sheet-masks/colours/{{c|slug}}/" class="btn btn">
 {{c}}
 </a>

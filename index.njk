@@ -21,7 +21,7 @@ eleventyNavigation:
 <div class="row">
 {% for brand in brands %}
 {% if brand.featured === "yes" %}
-<div class="col-6 product__set">
+<div class="col-6 product__set text-center">
   <a href="/sheet-masks/{{brand.name|slug|replace("'","")}}" class="p-2">{{brand.name}}</a>
   </div>
 {% endif %}
