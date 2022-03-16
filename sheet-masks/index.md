@@ -85,8 +85,25 @@ title: Sheet Mask Index - Browse all sheet masks
 {% endfor%}
 
 
-<h4 class="text-center">Listing <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands</h4>
+<div class="row index-header">
+<div class="col col-xs-6 col-sm-6 col-lg-3 col-md-3 d-flex order-2 order-md-1 align-items-center">
+<h5 class="neutron">Latest Additions..</h5>
+</div>
+
+<div class="col-12 col-sm-12 col-md-6 order-1 order-md-2 align-items-center">
+  <h4 class="text-center">Listing <span>{{productcount}}</span> sheet masks from <span>{{brandcount}}</span> brands</h4>
+  </div>
+
+
+<div class="col col-xs-6 col-sm-6 col-lg-3 col-md-3 d-flex justify-content-end order-3 order-md-3 align-items-center">
+    <a href="/sheet-masks/" class="btn btn-outline-secondary">See all masks..</a>
+</div>
+</div>
+
 <p class="text-center" style="max-width: 100%;font-size: .9rem;padding: 2px 0;">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
+
+
+
 
 <div class="row pagination justify-content-between">
 
