@@ -2,7 +2,8 @@
 <div class="product__row row {% if loop.index >= 3 %}hide-mobile{% endif %}">
 {% for item in row %}
 {% if item %}
-<div class="product col-4 col-xl-2">
+<div class="col-4 col-xl-2 p-0 m-0 mb-2">
+  <div class="product">
 
   <div>
   <small>
@@ -47,6 +48,7 @@
  {% endif %}
 </div>
 
+</div>
 </div>
   </div>
   {% endif %}
