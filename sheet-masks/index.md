@@ -96,7 +96,7 @@ title: Sheet Mask Index - Browse all sheet masks
 
 
 <div class="col col-xs-6 col-sm-6 col-lg-3 col-md-3 d-flex justify-content-end order-3 order-md-3 align-items-center">
-    <a href="/sheet-masks/" class="btn btn-outline-secondary">See all masks..</a>
+    <a href="/sheet-masks/" class="btn btn-primary">All Masks</a>
 </div>
 </div>
 

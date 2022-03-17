@@ -2,7 +2,7 @@
 <div class="product__row row {% if loop.index >= 3 %}hide-mobile{% endif %}">
 {% for item in row %}
 {% if item %}
-<div class="col-4 col-xl-2 p-0 m-0 mb-2">
+<div class="col-4 col-xl-2 p-0 m-0">
   <div class="product">
 
   <div>
@@ -19,20 +19,20 @@
   </a>
 </div>
 
-<div class="product__image">
-<a href="/sheet-masks/{{item.brand|slug|replace("'","")}}/{{item.set|slug}}/{{item.name|slug|replace("'","")}}" style="display:block;padding: 5px;">
-<img src="/img/masks/{{item.brand|slug|replace("'","")}}/{{item.set|slug|replace("'","")}}/{{item.name|slug|replace("'","")}}.png" class="img-fluid product__product-image" alt="{{item.brand}} {{item.set}} {{item.name}}" title="{{item.brand}} {{item.set}} {{item.name}}">
-</a>
-</div>
-
-<div class="product__desc">
-
 <div class="text-center product__name">  
-  <a href="/sheet-masks/{{item.brand|slug|replace("'","")}}/{{item.set|slug|replace("'","")}}/{{item.name|slug|replace("'","")}}">
     {{item.name}}
-  </a>
 </div>
+
+<div class="product__image">
+   {% if item.link|length >0 and item.linkprovider %} 
+ <a href="{{item.link}}" class="" target="_blank">
+   {%endif%}
+
+<img src="/img/masks/{{item.brand|slug|replace("'","")}}/{{item.set|slug|replace("'","")}}/{{item.name|slug|replace("'","")}}.png" class="img-fluid product__product-image" alt="{{item.brand}} {{item.set}} {{item.name}}" title="{{item.brand}} {{item.set}} {{item.name}}">
+{% if item.link|length >0 and item.linkprovider %} </a>{%endif%}
 </div>
+
+<div class="product__desc"></div>
 <div class="row">
 
 <div class="col-xs-12 text-center">
@@ -42,9 +42,6 @@
    <span class="product__linkprovider">on {{item.linkprovider}}</span>
    </a>
  {% else %}
- 
- 
- 
  {% endif %}
 </div>
 
