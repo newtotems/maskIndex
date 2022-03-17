@@ -55,11 +55,16 @@ eleventyComputed:
 {% set ccount = loop.length %}
 {% endfor %}
 
-<h4 class="text-center">Listing <span>{{ccount}}</span> sheet masks from <span>{{brand.name}}</span></h4>
-<p class="text-center" style="
-    max-width: 100%;
-    background: #ededed;
-">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
+
+<div class="row index-header">
+
+<div class="col-12 order-1 order-md-2 align-items-center">
+  <h4 class="text-center">Listing <span>{{ccount}}</span> sheet masks from <span>{{brand.name}}</span></h4>
+  <p class="text-center aff-disclaimer">When you click a Buy link, we may earn an affiliate commission. <a href="">Learn more</a></p>
+  </div>
+
+</div>
+
 
 {% set masks = prods %}
 {% include "listmasks.njk" %}
